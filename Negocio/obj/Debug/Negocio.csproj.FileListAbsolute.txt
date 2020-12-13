@@ -1,0 +1,11 @@
+C:\Users\Charango\source\repos\Almacen\Negocio\bin\Debug\Negocio.dll
+C:\Users\Charango\source\repos\Almacen\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Charango\source\repos\Almacen\Negocio\bin\Debug\Datos.dll
+C:\Users\Charango\source\repos\Almacen\Negocio\bin\Debug\Entidades.dll
+C:\Users\Charango\source\repos\Almacen\Negocio\bin\Debug\Datos.pdb
+C:\Users\Charango\source\repos\Almacen\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Charango\source\repos\Almacen\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Charango\source\repos\Almacen\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Charango\source\repos\Almacen\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Charango\source\repos\Almacen\Negocio\obj\Debug\Negocio.dll
+C:\Users\Charango\source\repos\Almacen\Negocio\obj\Debug\Negocio.pdb

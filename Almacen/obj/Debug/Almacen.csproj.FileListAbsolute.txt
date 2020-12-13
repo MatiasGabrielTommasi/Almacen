@@ -1,0 +1,17 @@
+C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Almacen.exe.config
+C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Almacen.exe
+C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Almacen.pdb
+C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.csprojAssemblyReference.cache
+C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.Properties.Resources.resources
+C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.csproj.GenerateResource.cache
+C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.csproj.CoreCompileInputs.cache
+C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.exe
+C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.pdb
+C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.frmClientes.resources
+C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Entidades.dll
+C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Negocio.dll
+C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Entidades.pdb
+C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Negocio.pdb
+C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.csproj.CopyComplete
+C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Datos.dll
+C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Datos.pdb

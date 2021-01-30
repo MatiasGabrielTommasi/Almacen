@@ -26,17 +26,34 @@ namespace Almacen
         {
             try
             {
-                Cliente ObjetoCliente = new Cliente();
-                ObjetoCliente.Id = IdCliente;
-                ObjetoCliente.Nombre = txtNombre.Text;
-                ObjetoCliente.Apellido = txtApellido.Text;
-                ObjetoCliente.CorreoElectronico = txtCorreoElectronico.Text;
-                ObjetoCliente.FechaNacimiento = dtpFechaNacimiento.Value;
-                ObjetoCliente.Direccion = txtDireccion.Text;
-                ObjetoCliente.Telefono = txtTelefono.Text;
+                if(txtNombre.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un nombre.");
+                    txtNombre.BackColor = Color.Red;
+                }
+                else
+                {
+                    Cliente ObjetoCliente = new Cliente();
+                    ObjetoCliente.Id = IdCliente;
+                    ObjetoCliente.Nombre = txtNombre.Text;
+                    ObjetoCliente.Apellido = txtApellido.Text;
+                    ObjetoCliente.CorreoElectronico = txtCorreoElectronico.Text;
+                    ObjetoCliente.FechaNacimiento = dtpFechaNacimiento.Value;
+                    ObjetoCliente.Direccion = txtDireccion.Text;
+                    ObjetoCliente.Telefono = txtTelefono.Text;
 
-                Negocio.Cliente objNegocio = new Negocio.Cliente();
-                int resultado = objNegocio.Guardar(ObjetoCliente);
+                    Negocio.Cliente objNegocio = new Negocio.Cliente();
+                    int resultado = objNegocio.Guardar(ObjetoCliente);
+
+                    if(resultado > 0)
+                    {
+                        MessageBox.Show("Se guardo el cliente.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo registrar.");
+                    }
+                }
             }
             catch (Exception ex)
             {

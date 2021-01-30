@@ -10,5 +10,15 @@ namespace Entidades
     {
         public int IdMarca;
         public string NombreMarca;
+        public Marca()
+        {
+            this.IdMarca = 0;
+            this.NombreMarca = "Sin Marca";
+        }
+        public Marca(int Id, string Marca)
+        {
+            this.IdMarca = Id;
+            this.NombreMarca = Marca;
+        }
     }
 }

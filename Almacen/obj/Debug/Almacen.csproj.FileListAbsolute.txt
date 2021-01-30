@@ -15,3 +15,4 @@ C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Negocio.pdb
 C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.csproj.CopyComplete
 C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Datos.dll
 C:\Users\Charango\source\repos\Almacen\Almacen\bin\Debug\Datos.pdb
+C:\Users\Charango\source\repos\Almacen\Almacen\obj\Debug\Almacen.frmMarca.resources

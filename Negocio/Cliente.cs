@@ -8,6 +8,34 @@ namespace Negocio
 {
     public class Cliente
     {
+        public List<Entidades.Cliente> Cargar()
+        {
+            List<Entidades.Cliente> listado = new List<Entidades.Cliente>();
+            try
+            {
+                Datos.Cliente objetoDatos = new Datos.Cliente();
+                listado = objetoDatos.Cargar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error capa de negocio " + ex.Message);
+            }
+            return listado;
+        }
+        public Entidades.Cliente Buscar(string apellido, string telefono)
+        {
+            Entidades.Cliente cliente = new Entidades.Cliente();
+            try
+            {
+                Datos.Cliente objetoDatos = new Datos.Cliente();
+                cliente = objetoDatos.Buscar(apellido, telefono);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error capa de negocio " + ex.Message);
+            }
+            return cliente;
+        }
         public int Guardar(Entidades.Cliente ObjetoCliente)
         {
             int resultado = 0;
@@ -20,6 +48,20 @@ namespace Negocio
 
                 Datos.Cliente objDatos = new Datos.Cliente();
                 resultado = objDatos.Guardar(ObjetoCliente);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error capa de negocio " + ex.Message);
+            }
+            return resultado;
+        }
+        public int Actualizar(Entidades.Cliente ObjetoCliente)
+        {
+            int resultado = 0;
+            try
+            {
+                Datos.Cliente objDatos = new Datos.Cliente();
+                resultado = objDatos.Actualizar(ObjetoCliente);
             }
             catch (Exception ex)
             {

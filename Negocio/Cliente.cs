@@ -22,9 +22,9 @@ namespace Negocio
             }
             return listado;
         }
-        public Entidades.Cliente Buscar(string apellido, string telefono)
+        public List<Entidades.Cliente> Buscar(string apellido, string telefono)
         {
-            Entidades.Cliente cliente = new Entidades.Cliente();
+            List<Entidades.Cliente> cliente = new List<Entidades.Cliente>();
             try
             {
                 Datos.Cliente objetoDatos = new Datos.Cliente();
@@ -62,6 +62,20 @@ namespace Negocio
             {
                 Datos.Cliente objDatos = new Datos.Cliente();
                 resultado = objDatos.Actualizar(ObjetoCliente);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error capa de negocio " + ex.Message);
+            }
+            return resultado;
+        }
+        public int Eliminar(int Id)
+        {
+            int resultado = 0;
+            try
+            {
+                Datos.Cliente objDatos = new Datos.Cliente();
+                resultado = objDatos.Eliminar(Id);
             }
             catch (Exception ex)
             {

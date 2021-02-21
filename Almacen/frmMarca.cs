@@ -39,9 +39,10 @@ namespace Almacen
         {
             try
             {
-                dgvMarcas.AutoGenerateColumns = false;
+                //Negocio.Marca objN = new Negocio.Marca();
+                //List<Marca> resultado = objN.Cargar(ObjetoMarca);
+                dgvMarcas.AutoGenerateColumns = true;
                 dgvMarcas.DataSource = null;
-                dgvMarcas.Invalidate();
                 dgvMarcas.Refresh();
             }
             catch (Exception ex)

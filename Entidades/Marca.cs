@@ -8,8 +8,8 @@ namespace Entidades
 {
     public class Marca
     {
-        public int IdMarca;
-        public string NombreMarca;
+        public int IdMarca { get; set; }
+        public string NombreMarca { get; set; }
         public Marca()
         {
             this.IdMarca = 0;

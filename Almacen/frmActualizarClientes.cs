@@ -27,7 +27,7 @@ namespace Almacen
 
                 Entidades.Cliente objetoCliente = new Entidades.Cliente();
                 Negocio.Cliente objetoNegocio = new Negocio.Cliente();
-                objetoCliente = objetoNegocio.Buscar(apellido, telefono);
+                //objetoCliente = objetoNegocio.Buscar(apellido, telefono);
 
                 if(objetoCliente == null)
                 {

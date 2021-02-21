@@ -37,7 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.btnRegistrarCliente = new System.Windows.Forms.Button();
-            this.lblTotalClientes = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -119,24 +118,14 @@
             // 
             // btnRegistrarCliente
             // 
-            this.btnRegistrarCliente.Location = new System.Drawing.Point(154, 119);
+            this.btnRegistrarCliente.Location = new System.Drawing.Point(160, 117);
             this.btnRegistrarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarCliente.Name = "btnRegistrarCliente";
             this.btnRegistrarCliente.Size = new System.Drawing.Size(95, 25);
             this.btnRegistrarCliente.TabIndex = 8;
-            this.btnRegistrarCliente.Text = "Registrar Cliente";
+            this.btnRegistrarCliente.Text = "Guardar";
             this.btnRegistrarCliente.UseVisualStyleBackColor = true;
             this.btnRegistrarCliente.Click += new System.EventHandler(this.btnRegistrarCliente_Click);
-            // 
-            // lblTotalClientes
-            // 
-            this.lblTotalClientes.AutoSize = true;
-            this.lblTotalClientes.Location = new System.Drawing.Point(152, 173);
-            this.lblTotalClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotalClientes.Name = "lblTotalClientes";
-            this.lblTotalClientes.Size = new System.Drawing.Size(90, 13);
-            this.lblTotalClientes.TabIndex = 9;
-            this.lblTotalClientes.Text = "Clientes totales: 0";
             // 
             // label5
             // 
@@ -151,7 +140,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(159, 70);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(92, 20);
             this.txtTelefono.TabIndex = 11;
@@ -169,7 +158,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(285, 70);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(110, 20);
             this.txtDireccion.TabIndex = 13;
@@ -178,13 +167,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(436, 244);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(436, 163);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblTotalClientes);
             this.Controls.Add(this.btnRegistrarCliente);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.label4);
@@ -214,7 +202,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.Button btnRegistrarCliente;
-        private System.Windows.Forms.Label lblTotalClientes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label6;

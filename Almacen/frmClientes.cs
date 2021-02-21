@@ -13,13 +13,33 @@ namespace Almacen
 {
     public partial class frmClientes : Form
     {
-        private List<Cliente> ListadoClientes;
-        int IdCliente;
-        public frmClientes()
+        Cliente objCliente;
+        public frmClientes(Cliente objCliente)
         {
             InitializeComponent();
 
-            ListadoClientes = new List<Cliente>();
+            this.objCliente = objCliente;
+            if(objCliente.Id > 0)
+            {
+                CargarDatosCliente();
+            }
+        }
+
+        private void CargarDatosCliente()
+        {
+            try
+            {
+                txtApellido.Text = this.objCliente.Apellido;
+                txtCorreoElectronico.Text = this.objCliente.CorreoElectronico;
+                txtDireccion.Text = this.objCliente.Direccion;
+                txtNombre.Text = this.objCliente.Nombre;
+                txtTelefono.Text = this.objCliente.Telefono;
+                dtpFechaNacimiento.Value = this.objCliente.FechaNacimiento;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void btnRegistrarCliente_Click(object sender, EventArgs e)
@@ -33,21 +53,29 @@ namespace Almacen
                 }
                 else
                 {
-                    Cliente ObjetoCliente = new Cliente();
-                    ObjetoCliente.Id = IdCliente;
-                    ObjetoCliente.Nombre = txtNombre.Text;
-                    ObjetoCliente.Apellido = txtApellido.Text;
-                    ObjetoCliente.CorreoElectronico = txtCorreoElectronico.Text;
-                    ObjetoCliente.FechaNacimiento = dtpFechaNacimiento.Value;
-                    ObjetoCliente.Direccion = txtDireccion.Text;
-                    ObjetoCliente.Telefono = txtTelefono.Text;
+                    objCliente.Nombre = txtNombre.Text;
+                    objCliente.Apellido = txtApellido.Text;
+                    objCliente.CorreoElectronico = txtCorreoElectronico.Text;
+                    objCliente.FechaNacimiento = dtpFechaNacimiento.Value;
+                    objCliente.Direccion = txtDireccion.Text;
+                    objCliente.Telefono = txtTelefono.Text;
 
                     Negocio.Cliente objNegocio = new Negocio.Cliente();
-                    int resultado = objNegocio.Guardar(ObjetoCliente);
+                    int resultado = 0;
+                    
+                    if(objCliente.Id == 0)
+                    {
+                        resultado = objNegocio.Guardar(objCliente);
+                    }
+                    else
+                    {
+                        resultado = objNegocio.Actualizar(objCliente);
+                    }
 
                     if(resultado > 0)
                     {
                         MessageBox.Show("Se guardo el cliente.");
+                        this.Close();
                     }
                     else
                     {

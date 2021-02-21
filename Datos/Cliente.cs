@@ -48,9 +48,9 @@ namespace Datos
             }
             return listado;
         }
-        public Entidades.Cliente Buscar(string apellido, string telefono)
+        public List<Entidades.Cliente> Buscar(string apellido, string telefono)
         {
-            Entidades.Cliente cliente = null;
+            List<Entidades.Cliente> listado = new List<Entidades.Cliente>();
             string strSql = "procClientesBuscar";
             SqlConnection objCon = new SqlConnection("server=192.168.0.40;DataBase=Almacen;Integrated Security=true");
             SqlCommand cmd = new SqlCommand(strSql, objCon);
@@ -70,7 +70,7 @@ namespace Datos
 
                 foreach (DataRow row in objDt.Rows)
                 {
-                    cliente = new Entidades.Cliente();
+                    Entidades.Cliente cliente = new Entidades.Cliente();
                     cliente.Apellido = row["apellido"].ToString();
                     cliente.CorreoElectronico = row["correo_electronico"].ToString();
                     cliente.Direccion = row["direccion"].ToString();
@@ -84,13 +84,23 @@ namespace Datos
                     }
 
                     cliente.FechaRegistro = Convert.ToDateTime(row["fecha_registro"].ToString());
+
+                    listado.Add(cliente);
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception("Datos: " + ex.Message);
             }
-            return cliente;
+            finally
+            {
+                if (objCon.State == System.Data.ConnectionState.Open)
+                {
+                    objCon.Close();
+                }
+                cmd.Dispose();
+            }
+            return listado;
         }
         public int Guardar(Entidades.Cliente obj)
         {
@@ -142,6 +152,37 @@ namespace Datos
             command.Parameters.AddWithValue("@correo_electronico", obj.CorreoElectronico);
             command.Parameters.AddWithValue("@direccion", obj.Direccion);
             command.Parameters.AddWithValue("@fecha_nacimiento", obj.FechaNacimiento);
+
+            try
+            {
+                conexion.Open();
+                resultado = command.ExecuteNonQuery();//GC (Garbage Collector)
+                conexion.Close();
+                command.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Datos: " + ex.Message);
+            }
+            finally
+            {
+                if (conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+                command.Dispose();
+            }
+            return resultado;
+        }
+        public int Eliminar(int Id)
+        {
+            int resultado = 0;
+            string strSql = "procClientesEliminar";
+            SqlConnection conexion = new SqlConnection("server=192.168.0.40;DataBase=Almacen;Integrated Security=true");
+            SqlCommand command = new SqlCommand(strSql, conexion);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@id_cliente", Id);
 
             try
             {
